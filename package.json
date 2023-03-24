@@ -21,7 +21,14 @@
   "engines": {
     "node": ">=12"
   },
+
+  "nodemonConfig": {
+    "watch": ["src/*"],
+    "ignore": ["dist/*"]
+  },
+
   "scripts": {
+    "auto": "nodemon -e ts --exec npm run build",
     "build": "rollup -c",
     "prepublishOnly": "npm run build",
     "types": "tsc --noEmit",
